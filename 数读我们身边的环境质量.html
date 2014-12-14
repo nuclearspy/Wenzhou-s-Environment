@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/macarons.js"></script>
+    <title>数读我们身边的环境质量</title>
+    <style type="text/css">
+.main {margin:3% auto;}
+#title {height:30px; line-height:30px;margin:0 auto}
+#title span {margin:0 auto;float:left; width:50%; height:30px; color:#989898; background:#eee; text-align:center; cursor:pointer; font-weight:bold;}
+#title span.on {background-color: rgb(0, 165, 235); color:#fff;margin:0 auto}
+#con {background:#fafafa;margin:0 auto}
+#con ul {display:none; padding:10px;}
+#con ul.on {display:block;}
+
+</style>
+
+<script type="text/javascript">
+window.onload=function () {
+    var oTitle = document.getElementById('title');
+    var aSpan = oTitle.getElementsByTagName('span');
+    var oCon = document.getElementById('con');
+    var aUl = oCon.getElementsByTagName('ul');
+    var i = 0;
+    for(i=0; i<aSpan.length; i++) {
+        var index = 0;
+        aSpan[i].index = aUl[i].index = i;
+        
+        aSpan[i].onclick = function () {
+            for(i=0; i<aSpan.length; i++) {
+                aSpan[i].className = '';
+                aUl[i].className = '';
+            }
+            
+            this.className = 'on';
+            aUl[this.index].className = 'on';
+        };
+    }
+};
+</script>
+</head>
+<body>
+    <h1 style="text-align:center">数读我们身边的环境质量</h1>
+    <p style=""><span style="max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; color: rgb(242, 242, 242); background-color: rgb(0, 165, 235);"><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color: rgb(255, 255, 255); line-height: 24px;">抬头望着蓝天的时候，我们会不由自主地深吸一口气；看见波光粼粼的湖面的时候，我们觉得这儿的水一定很干净。但是你真的知道我们生活的周围的环境状况嘛？那些你感觉不到的差别，数据会让你看的更清楚。</strong></strong></strong><br></span></p>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px">
+    </div>
+    <p style=""><span style="max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; color: rgb(242, 242, 242); background-color: rgb(0, 165, 235);"><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color: rgb(255, 255, 255); line-height: 24px;">经过这几年的整治，我们再也不用面对漂满了垃圾的河面，听到的噪音也在慢慢地减少，深呼吸一下，周围的空气终于不像去年那样闷得慌了，有没有感觉整个人都变好了呢！但是跟浙江的其他城市相比，温州的空气质量又是怎样的情况呢？</strong></strong></strong><br></span></p>
+    </div>
+
+<div class="wrapper">
+    <div class="main">
+        <h4 id="title">
+            <span class="on">2014年度平均比较</span>
+            <span>每月比较</span>
+
+        </h4>
+        <div id="con">
+            <ul class="on">
+    <div id="index_2" style="height:600px"></div>
+    <p style=""><span style="max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; color: rgb(242, 242, 242); background-color: rgb(0, 165, 235);"><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color: rgb(255, 255, 255); line-height: 24px;">今年的1~11月份温州的PM2.5浓度平均值（越低越好）在浙江省排第四名，但与第二的宁波和第三的台州差距并不是很大。而空气质量达标的天数有307天，仅次于舟山。</strong></strong></strong><br></span></p>
+            </ul>
+            
+            <ul class="on">
+    <div id="index_1" style="height:600px"></div>
+    <p style=""><span style="max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; color: rgb(242, 242, 242); background-color: rgb(0, 165, 235);"><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color: rgb(255, 255, 255); line-height: 24px;">图中小方格的位置（达标天数）越高，面积（PM2.5浓度）越小，就说明当月的空气质量越好。</br>【叠在一起了你让我怎么看！】</br>-> 来，我们早就准备了放大镜！使用右边工具箱里的区域缩放就可以放大了。要恢复的话，记得用还原哦。</br>【放大了都分不清楚！你要逼死处女座嘛！】</br>-> 鼠标移到方块上就可以查看具体指标和排名了。</br>单独对比了温州和舟山的数据，瞬间心塞；再和杭州比一下，终于可以一本满足地去看下一张图表。</strong></strong></strong><br></span></p>
+            </ul>
+
+        </div>
+    </div>
+</div>
+    <div id="index_3" style="height:400px"></div>
+    <p style=""><span style="max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; color: rgb(242, 242, 242); background-color: rgb(0, 165, 235);"><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color: rgb(255, 255, 255); line-height: 24px;">温州近几年的空气质量基本都在优良（<100）两个等级，除了2010年3月22日直接爆表！至于2013年的数据，很遗憾环保部暂未提供原始数据，只能说平均空气质量最差。小提示：拖动下方比例尺可进行拖动或改变时间范围。</strong></strong></strong><br></span></p>
+
+    <!-- ECharts单文件引入 -->
+    <script src="js/echarts-all.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index_1.js"></script>
+    <script src="js/index_2.js"></script>
+    <script src="js/index_3.js"></script>
+
+    <p style=""><span style="border:dashed 2px #E3E3DA; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important; padding: 15px 25px; top: 0px; line-height: 24px; vertical-align: baseline; display: block; background-color: #F8F8F8; "><strong style="line-height: 24px; font-size: 16px; max-width: 100%; word-wrap: break-word !important; box-sizing: border-box !important;"><strong><strong style="color:#666; line-height: 24px;">看了上面的这几张图表你对温州的环境状况是不是比以前更了解了呢？想要查看原始数据找茬的，看右边。<a href="http://yun.baidu.com/s/1jGzK6qE#dir/path=/%E6%B8%A9%E5%B7%9E%E7%BD%91-%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F">【快来戳这里】</a></strong></strong></strong><br></span></p>
+</body>
